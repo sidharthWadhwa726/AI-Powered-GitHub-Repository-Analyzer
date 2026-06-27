@@ -1,0 +1,334 @@
+/* ===================================
+   Repository Hero Section
+=================================== */
+
+#pane-repo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 24px 80px;
+}
+
+.repo-hero{
+    width:100%;
+    max-width:650px;
+    text-align:center;
+}
+
+.repo-hero-eyebrow{
+    margin-bottom:18px;
+    color:var(--accent-hi);
+    font-size:.72rem;
+    font-family:var(--font-mono);
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.repo-hero-title{
+    margin-bottom:14px;
+    font-size:clamp(2rem,4vw,3rem);
+    font-weight:700;
+    line-height:1.1;
+    letter-spacing:-0.04em;
+}
+
+.repo-hero-title span{
+    background:linear-gradient(
+        135deg,
+        var(--accent-hi),
+        #a5b4fc
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.repo-hero-sub{
+    color:var(--muted);
+    font-size:1rem;
+    line-height:1.6;
+    margin-bottom:40px;
+}
+/* ===================================
+   Repository URL Input
+=================================== */
+.input-shell{
+    width:100%;
+    display:flex;
+    align-items:center;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    transition:.2s;
+}
+.input-shell:focus-within{
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px var(--accent-lo);
+}
+.input-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 16px;
+    color:var(--muted);
+}
+.url-input{
+    flex:1;
+    padding:16px 0;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:var(--text);
+    font-family:var(--font-mono);
+    font-size:.88rem;
+}
+.url-input::placeholder{
+    color:var(--muted);
+}
+/* ===================================
+   Analyze Button
+=================================== */
+.analyse-btn{
+    margin:6px;
+    padding:10px 22px;
+    border:none;
+    border-radius:8px;
+    background:var(--accent);
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+    font-size:.88rem;
+    transition:.15s;
+}
+.analyse-btn:hover{
+    background:var(--accent-hi);
+}
+.analyse-btn:active{
+    transform:scale(.97);
+}
+.analyse-btn:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+}
+/* ===================================
+   Repository Examples
+=================================== */
+.hint-row{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:16px;
+}
+.hint-chip{
+    padding:5px 12px;
+    border:1px solid var(--border);
+    border-radius:7px;
+    background:var(--surface);
+    color:var(--muted);
+    font-size:.72rem;
+    font-family:var(--font-mono);
+    cursor:pointer;
+    transition:.15s;
+}
+.hint-chip:hover{
+    border-color:var(--accent);
+    color:var(--accent-hi);
+}
+/* ===================================
+   Loading
+=================================== */
+
+.repo-loading{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    padding:48px 0;
+}
+
+.repo-loading.visible{
+    display:flex;
+}
+
+.loading-text{
+    color:var(--muted);
+    font-size:.88rem;
+}
+
+.loading-step{
+    color:var(--accent-hi);
+    font-size:.72rem;
+    font-family:var(--font-mono);
+    opacity:.8;
+}
+/* ===================================
+   Repository Card
+=================================== */
+
+.repo-result{
+    display:none;
+    margin-top:32px;
+   width:100%;
+}
+.repo-result.visible{
+    display:block;
+}
+
+.repo-meta{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:20px;
+    background:var(--surface2);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+}
+
+
+
+/* ===================================
+   Avatar
+=================================== */
+
+.repo-avatar{
+    width:46px;
+    height:46px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--accent-lo);
+    font-size:1.4rem;
+    flex-shrink:0;
+}
+
+
+
+/* ===================================
+   Repository Info
+=================================== */
+
+.repo-info{
+    flex:1;
+    min-width:0;
+}
+
+.repo-name{
+    color:var(--accent-hi);
+    font-size:1rem;
+    font-weight:700;
+    font-family:var(--font-mono);
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.repo-desc{
+    margin-top:4px;
+    color:var(--muted);
+    font-size:.83rem;
+    line-height:1.5;
+}
+/* ===================================
+   Statistics
+=================================== */
+.repo-stats{
+    display:flex;
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+    min-width:55px;
+}
+
+.stat-val{
+    color:var(--text);
+    font-weight:700;
+    font-size:1rem;
+}
+
+.stat-lbl{
+    margin-top:3px;
+    color:var(--muted);
+    font-size:.62rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+
+
+
+/* ===================================
+   Section Card
+=================================== */
+
+.section-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:22px;
+    margin-bottom:20px;
+}
+
+.section-card h3{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+    color:var(--muted);
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+}
+
+.section-card h3::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--border);
+}
+
+
+
+/* ===================================
+   Repository Loaded Button
+=================================== */
+
+.switch-prompt{
+    margin-top:18px;
+    color:var(--muted);
+    text-align:center;
+    font-size:.85rem;
+}
+
+.switch-prompt button{
+    border:none;
+    background:none;
+    color:var(--accent-hi);
+    cursor:pointer;
+    text-decoration:underline;
+    font-size:.85rem;
+}
+
+.switch-prompt button:hover{
+    color:white;
+}
+
+
+
+/* ===================================
+   Mobile
+=================================== */
+
+@media(max-width:700px){
+    .repo-meta{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    .repo-stats{
+        width:100%;
+        justify-content:space-around;
+        margin-top:15px;
+    }
+}

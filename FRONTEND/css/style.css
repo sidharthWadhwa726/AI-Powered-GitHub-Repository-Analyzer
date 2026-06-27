@@ -1,0 +1,97 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+      --bg:        #0D1117;
+      --surface:   #161B22;
+      --surface2:  #21262D;
+      --border:    #30363D;
+      --accent:    #6366F1;
+      --accent-lo: #6366F120;
+      --accent-hi: #818CF8;
+      --green:     #3FB950;
+      --muted:     #8B949E;
+      --text:      #E6EDF3;
+      --text-dim:  #C9D1D9;
+      --radius:    12px;
+      --font-ui:   'Space Grotesk', sans-serif;
+      --font-mono: 'Fira Code', monospace;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-ui);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.app{
+    padding-top:52px;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+/* ---------- Empty State ---------- */
+
+.empty-state{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      padding:80px 24px;
+      text-align:center;
+}
+
+.empty-icon{
+      width:56px;
+      height:56px;
+      border-radius:14px;
+      background:var(--surface2);
+      border:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.6rem;
+}
+
+.empty-title{
+      font-weight:600;
+      font-size:1rem;
+      color:var(--text-dim);
+}
+.empty-sub{
+      color:var(--muted);
+      font-size:0.85rem;
+      max-width:300px;
+      line-height:1.55;
+}
+/* ---------- Spinner ---------- */
+.spinner{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      border:3px solid var(--border);
+      border-top-color:var(--accent);
+     animation:spin .8s linear infinite;
+}
+@keyframes spin{
+      to{
+            transform:rotate(360deg);
+      }
+}
+/* ---------- Mobile ---------- */
+@media(max-width:600px){
+      #pane-arch{
+            padding:16px;
+      }
+}

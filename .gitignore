@@ -1,0 +1,47 @@
+# Environment variables
+.env
+
+# Python virtual environment
+venv/
+.venv/
+.vscode
+# Python cache
+__pycache__/
+*.pyc
+
+# Node modules
+node_modules/
+
+# ChromaDB
+chroma_db/
+
+# OS files
+.DS_Store
+Thumbs.db# Secret environment files
+.env
+backend/.env
+frontend/.env.local
+
+# Python
+venv/
+backend/venv/
+__pycache__/
+*.pyc
+
+# Node / Next.js
+node_modules/
+frontend/node_modules/
+.next/
+frontend/.next/
+
+# Build outputs
+dist/
+build/
+
+# OS/editor files
+.DS_Store
+.vscode/
+
+test.py
+notes.txt
+architectures

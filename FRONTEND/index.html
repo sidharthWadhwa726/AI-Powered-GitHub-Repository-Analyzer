@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GitHub Repository Analyzer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/architecture.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+<header class="topbar">
+    <div class="topbar-logo">
+        <i class="fa-brands fa-github"></i>
+        <span>AI Repository Analyser</span>
+    </div>
+</header>
+<div class="app">
+    <!-- NAVIGATION -->
+    <nav class="tab-nav">
+        <!-- dafault active  -->
+        <button class="tab-nav-btn active" id="nav-repo">Repository</button>
+        <button class="tab-nav-btn" id="nav-arch">Architecture</button>
+        <button class="tab-nav-btn" id="nav-chat">Chat</button>
+    </nav>
+    <!-- REPOSITORY -->
+    <section class="tab-pane active" id="pane-repo">
+        <div class="repo-hero">
+            <div class="repo-hero-eyebrow">
+                GitHub Repository Analyzer
+            </div>
+            <h1 class="repo-hero-title">
+                Analyze any repository.
+            </h1>
+            <p class="repo-hero-sub">
+                Build embeddings, visualize architecture,
+                and chat with the repository using RAG.
+            </p>
+            <div class="input-shell">
+                <span class="input-icon">
+                    <i class="fa-brands fa-github"></i>
+                </span>
+                <input id="repoUrl" class="url-input" placeholder="https://github.com/owner/repository">
+                <button id="analyseBtn" class="analyse-btn"> Analyze Repository </button>
+            </div>
+            <div class="hint-row">
+                <span class="hint-chip">
+                    facebook/react
+                </span>
+                <span class="hint-chip">
+                    langchain-ai/langchain
+                </span>
+                <span class="hint-chip">
+                    microsoft/vscode
+                </span>
+            </div>
+            <!-- Loading -->
+            <div id="repoLoading" class="repo-loading">
+                <div class="spinner"></div>
+                <div class="loading-text"> Analyzing Repository...</div>
+                <div id="loadingStep" class="loading-step">
+                    Fetching Repository...
+                </div>
+            </div>
+            <!-- Result -->
+            <div id="repoResult" class="repo-result">
+                <div class="repo-meta">
+                    <div id="repoAvatar" class="repo-avatar">
+                        📦
+                    </div>
+                    <div class="repo-info">
+                        <div id="repoName" class="repo-name">
+                            owner/repository
+                        </div>
+                        <div id="repoDesc" class="repo-desc">
+                            Repository Description
+                        </div>
+                    </div>
+                    <div class="repo-stats">
+                        <div class="stat">
+                            <div class="stat-val" id="statStars">
+                                —
+                            </div>
+                            <div class="stat-lbl">
+                                Stars
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-val" id="statForks">
+                                —
+                            </div>
+                            <div class="stat-lbl">
+                                Forks
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-val" id="statLang">
+                                —
+                            </div>
+                            <div class="stat-lbl">
+                                Language
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ARCHITECTURE -->
+    <section class="tab-pane"id="pane-arch">
+        <div id="arch-empty" class="empty-state">
+            <h2>
+                No repository loaded
+            </h2>
+        </div>
+        <div id="arch-content">
+            <div class="section-card">
+                <h3> Repository Summary </h3>
+                <pre id="repoSummary"></pre>
+            </div>
+            <div class="section-card">
+                <h3>Folder Structure</h3>
+                <pre id="dirTree"></pre>
+            </div>
+            <div class="section-card">
+                <h3>Function Graph</h3>
+                <pre id="functionGraph"></pre>
+            </div>
+            <div class="section-card">
+                <h3>Import Graph</h3>
+                <pre id="importGraph"></pre>
+            </div>
+            <div class="section-card">
+                <h3>Execution Flow</h3>
+                <pre id="executionFlow"></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAT -->
+    <section class="tab-pane"id="pane-chat">
+        <div id="chat-empty"class="empty-state">
+            <h2>No repository loaded</h2>
+        </div>
+        <div id="chat-content"class="chat-wrap">
+            <div id="chatMessages"class="chat-messages">
+            </div>
+            <div class="suggested-qs" id="suggestedQs">
+            </div>
+            <div class="chat-input-row">
+                <textarea id="chatInput"class="chat-textarea"placeholder="Ask anything about this repository...">
+                </textarea>
+                <button id="sendBtn" class="send-btn">
+                    Send
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- JavaScript -->
+<script src="JAVASCRIPT/api.js"></script>
+<script src="JAVASCRIPT/app.js"></script>
+<script src="JAVASCRIPT/architecture.js"></script>
+<script src="JAVASCRIPT/chat.js"></script>
+<script src="JAVASCRIPT/overview.js"></script>
+</body>
+</html>
